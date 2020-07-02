@@ -6,7 +6,7 @@ This image is for mongos (i.e. MongoDB router) *not* MongoDB. It uses `mongo:3.4
 
 `entrypoint.sh` accepts multiple environment variables in base64 and decodes + saves them to specified locations in the container for mongos to access.
 
-1. Begin by base64 encoding contents of the files you need within the container, including `mongod.conf`
+1. Begin by base64 encoding contents of the files you need within the container
 2. `docker run -e <file_contents_1> -e </path/to/file_contents_1> -e <mongod_contents> -e </path/to/mongod.conf>`
 
 ## Example
@@ -91,8 +91,8 @@ docker run -e B64_SSL_PEM_KEY=IyBtb25nb2QucGVtZmlsZQoKZXhhbXBsZXBlbWZpbGU= \
 # Environment Variables
 | Variable | Description |
 | -------- | ----------- |
-| B64_CONFIG | (*Required*) Contents of `mongod.conf`, base64 encoded |
-| CONFIG_FILEPATH | (*Required*) Filepath to save `mongod.conf` |
+| B64_CONFIG | (Optional) Contents of `mongod.conf`, base64 encoded |
+| CONFIG_FILEPATH | (Optional) Filepath to save `mongod.conf`. Uses default `/etc/mongod.conf.orig` if not supplied |
 | B64_SSL_PEM_KEY | (Optional) Contents of PEM file for ssl |
 | SSL_PEM_KEYFILE_PATH | (Optional) Filepath to save PEM file contents |
 | B64_SSL_CLUSTER | (Optional) Contents of Key file for internal SSL authentication |
