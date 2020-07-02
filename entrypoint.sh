@@ -1,11 +1,9 @@
 #!/bin/bash
 
-if [[ $B64_SSL_PEM_KEY && $SSL_PEM_KEYFILE_FILEPATH ]]; then
-  echo $B64_SSL_PEM_KEY | base64 --decode >> "$SSL_PEM_KEYFILE_FILEPATH"
+if [[ $B64_SSL_PEM_KEY && $SSL_PEM_KEYFILE_PATH ]]; then
+  echo $B64_SSL_PEM_KEY | base64 --decode >> "$SSL_PEM_KEYFILE_PATH"
 fi
 
-if [[ $B64_SSL_PEM_KEY_PWD && $SSL_PEM_KEY_PWD_FILEPATH ]]; then
-  echo $B64_SSL_PEM_KEY_PWD | base64 --decode >> "$SSL_PEM_KEY_PWD_FILEPATH"
 fi
 
 if [[ $B64_SSL_CLUSTER && $SSL_CLUSTER_FILEPATH ]]; then
@@ -24,8 +22,6 @@ if [[ $B64_KEY_FILE && $KEY_FILEPATH ]]; then
   echo $B64_KEY_FILE | base64 --decode >> "$KEY_FILEPATH"
 fi
 
-if [[ $B64_CONFIG && $CONFIG_FILEPATH ]]; then
-  echo $B64_CONFIG | base64 --decode >> "$CONFIG_FILEPATH"
-fi
+echo $B64_CONFIG | base64 --decode >> "$CONFIG_FILEPATH"
 
 mongos --config $CONFIG_FILEPATH
