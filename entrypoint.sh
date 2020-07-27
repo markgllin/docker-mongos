@@ -33,11 +33,11 @@ if [[ $B64_CONFIG && $CONFIG_FILEPATH ]]; then
 fi
 
 if [[ ! -z $SYSTEM_LOGPATH ]]; then
-  mkdir -p $SYSTEM_LOGPATH
+  mkdir -p $(dirname $SYSTEM_LOGPATH)
 fi
 
 if [[ ! -z $PROC_MGMT_PID_PATH ]]; then
-  mkdir -p $PROC_MGMT_PID_PATH
+  mkdir -p $(dirname $PROC_MGMT_PID_PATH)
 fi
 
 mongos --config $CONFIG_FILEPATH
