@@ -103,4 +103,5 @@ docker run -e B64_SSL_PEM_KEY=IyBtb25nb2QucGVtZmlsZQoKZXhhbXBsZXBlbWZpbGU= \
 | SSL_CRL_FILEPATH | (Optional) Filepath to save Certificate Revocation List file |
 | B64_KEY_FILE | (Optional) Contents of private key file for cluster authentication |
 | KEY_FILEPATH | (Optional) Filepath to save private key contents |
-
+| SYSTEM_LOGPATH | (Optional) Filepath of log file to which mongos sends diagnostic logging info |
+| PROC_MGMT_PID_PATH | (Optional) File location to store the PID of the mongos process |
