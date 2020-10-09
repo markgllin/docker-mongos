@@ -4,7 +4,7 @@ This image is for mongos (i.e. MongoDB router) *not* MongoDB. It uses `mongo:3.4
 
 # Usage
 
-`entrypoint.sh` accepts multiple environment variables in base64 and decodes + saves them to specified locations in the container for mongos to access.
+`entrypoint.sh` accepts multiple environment variables in base64 and decodes + saves them to specified locations in the container for mongos to access. Alternatively, you can bind mount the configuration and keyfiles onto the container if they are present on the host.
 
 1. Begin by base64 encoding contents of the files you need within the container
 2. `docker run -e <file_contents_1> -e </path/to/file_contents_1> -e <mongod_contents> -e </path/to/mongod.conf>`
